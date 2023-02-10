@@ -3,7 +3,7 @@
   import Card from "../molecules/Card.svelte"
 </script>
 
-<div class="mt-12 mb-28 text-center">
+<div class="mb-28 text-center">
   <h2 class="">Designer and Front-End Developer</h2>
   <h1 class="mb-6 mt-2 text-8xl">Hi, im Christofer</h1>
   <div class="mb-10 flex flex-col gap-1 text-sm font-bold text-zinc-300">

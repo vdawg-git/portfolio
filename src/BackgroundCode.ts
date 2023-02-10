@@ -9,7 +9,12 @@ worker.addEventListener("message", update)
 export function initialzeCodeBackground() {
   const observer = new MutationObserver(sendHTMLtoWorker)
 
-  observer.observe(getAppNode(), { childList: true, subtree: true })
+  observer.observe(getAppNode(), {
+    childList: true,
+    subtree: true,
+    characterData: true,
+    attributes: true,
+  })
 
   sendHTMLtoWorker()
 }
@@ -19,8 +24,6 @@ function sendHTMLtoWorker() {
     source: getAppHTML(),
     lineLenght: 160,
   }
-
-  console.log({ message })
 
   worker.postMessage(message)
 }

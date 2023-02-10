@@ -50,7 +50,7 @@ h5 {
 }
 
 ._perspective {
-  transform: translateY(150px) translateX(24px) translateZ(-0.3px) scale(1.33);
+  transform: translateY(150px) translateX(24px) translateZ(-0.4px) scale(1.45);
   transform-style: preserve-3d;
 }
 
@@ -60,17 +60,15 @@ h5 {
   https://github.com/antfu/prism-theme-vars/blob/master/themes/vitesse-dark.css
   
 */
-/* pre code.hljs {
+pre code.hljs {
   display: block;
   overflow-x: auto;
   padding: 1em;
 }
-code.hljs {
-  padding: 3px 5px;
-}
+
 .hljs,
 #bg_code {
-  color: #c98a7d;
+  color: #a1c9f1;
 }
 .hljs-doctag,
 .hljs-keyword,
@@ -79,7 +77,7 @@ code.hljs {
 .hljs-template-variable,
 .hljs-type,
 .hljs-variable.language_ {
-  color: #5da9a7;
+  color: #f47067;
 }
 .hljs-title,
 .hljs-title.class_,
@@ -97,12 +95,12 @@ code.hljs {
 .hljs-selector-class,
 .hljs-selector-id,
 .hljs-variable {
-  color: #4c9a91;
+  color: #6cb5ff;
 }
 .hljs-meta .hljs-string,
 .hljs-regexp,
 .hljs-string {
-  color: #c98a7d;
+  color: #7fc5fe;
 }
 .hljs-built_in,
 .hljs-symbol {
@@ -111,13 +109,17 @@ code.hljs {
 .hljs-code,
 .hljs-comment,
 .hljs-formula {
-  color: #758575dd;
+  color: #768390;
+}
+.hljs-comment {
+  line-height: 1;
+  display: inline-block;
 }
 .hljs-name,
 .hljs-quote,
 .hljs-selector-pseudo,
 .hljs-selector-tag {
-  color: #c99076;
+  color: #8ddb8c;
 }
 .hljs-subst {
   color: #db889a;
@@ -142,4 +144,4 @@ code.hljs {
 }
 .hljs-deletion {
   color: #cb7676;
-} */
+}

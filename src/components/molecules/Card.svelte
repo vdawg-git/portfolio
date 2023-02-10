@@ -5,7 +5,7 @@
 </script>
 
 <div
-  class="flex flex-col-reverse items-center rounded-3xl  border border-zinc-400/30 bg-zinc-100/5 shadow-lg backdrop-blur-md max-md:p-7 md:h-[20rem] md:flex-row md:items-end"
+  class="flex flex-col-reverse items-center overflow-hidden  rounded-3xl border border-zinc-400/30 bg-zinc-800/5 shadow-lg backdrop-blur-sm max-md:p-7 md:h-[20rem] md:flex-row md:items-end"
 >
   <div class="flex flex-col gap-3 p-4 md:p-8">
     <h3 class="text-6xl">{name}</h3>

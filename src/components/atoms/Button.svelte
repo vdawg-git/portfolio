@@ -11,6 +11,6 @@
   on:click
   on:keydown
   {href}
-  class="rounded-md border border-zinc-400/50 bg-zinc-100/5 px-6 py-3 text-sm shadow-md backdrop-blur-md transition-colors hover:bg-zinc-100/20"
+  class="relative rounded-md border border-zinc-400/50 px-6 py-3 text-sm shadow-md  transition-colors after:absolute after:inset-0 after:-z-10 after:bg-zinc-100/5 after:backdrop-blur-sm hover:bg-zinc-100/20"
   >{label}</svelte:element
 >

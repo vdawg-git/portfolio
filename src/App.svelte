@@ -10,13 +10,15 @@
   initialzeCodeBackground()
 </script>
 
-{@html `<!--${ridgebackASCI}-->`}
+{#if window.innerWidth > 1100}
+  {@html `<!--${ridgebackASCI}-->`}
+{/if}
 
 <main class="h-full w-full bg-transparent">
   <Router>
     <Navbar />
     <div
-      class="mx-auto flex  h-screen max-w-[45rem] flex-col items-center bg-transparent px-6 lg:pt-12"
+      class="mx-auto flex  h-screen max-w-[45rem] flex-col items-center bg-transparent px-6 pt-24 lg:pt-12"
     >
       <Route path="/">
         <Home />

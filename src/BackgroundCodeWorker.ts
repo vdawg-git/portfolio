@@ -40,8 +40,6 @@ onmessage = (event: MessageEvent<BackgroundCodeArgument>) => {
             ? colors.red
             : undefined
 
-          color && part.added && console.log(part.value)
-
           return color
             ? `<span style="background-color: ${color};">${part.value}</span>`
             : part.value

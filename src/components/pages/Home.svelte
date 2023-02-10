@@ -3,12 +3,25 @@
   import Card from "../molecules/Card.svelte"
 </script>
 
-<div class="mb-28 text-center">
-  <h2 class="">Designer and Front-End Developer</h2>
-  <h1 class="mb-6 mt-2 text-8xl">Hi, im Christofer</h1>
-  <div class="mb-10 flex flex-col gap-1 text-sm font-bold text-zinc-300">
-    <p class="">I like to code, design and shoot pictures.</p>
-    <p>MacGruber is also the best film.</p>
+<div class="mb-28 text-center ">
+  <h2 class="shadow-zinc-900 text-shadow-cover ">
+    Designer and Front-End Developer
+  </h2>
+  <h1 class="texts mb-6 mt-2 text-8xl shadow-zinc-900 text-shadow-cover">
+    Hi, im Christofer
+  </h1>
+  <div
+    class="mb-10 flex flex-col gap-1 text-sm font-bold text-zinc-300 shadow-zinc-900 text-shadow-cover"
+  >
+    <p class="shadow-zinc-900 text-shadow-cover ">
+      I like to code, design and shoot pictures.
+    </p>
+    <p
+      class="shadow-zinc-900 text-shadow-cover
+    "
+    >
+      MacGruber is also the best film.
+    </p>
   </div>
 
   <Button

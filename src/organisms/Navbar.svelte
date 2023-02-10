@@ -16,7 +16,7 @@
   class="sticky top-8 z-40 flex w-screen items-center justify-center py-2 px-6 lg:inset-0 lg:h-[128px]"
 >
   <div
-    class="relative z-40 flex w-[748px] items-center justify-between rounded-full border border-zinc-400/30 bg-zinc-800/5 px-6 py-2 shadow-md after:absolute after:inset-0 after:-z-10 after:rounded-full after:backdrop-blur-md"
+    class="relative z-40 flex w-[748px] items-center justify-between rounded-full border border-zinc-400/30 bg-zinc-800/5 px-6 py-2 shadow-xl after:absolute after:inset-0 after:-z-10 after:rounded-full after:backdrop-blur-md"
   >
     <div class="text-sm md:text-lg">
       <Link to="/"

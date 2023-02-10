@@ -50,7 +50,7 @@ h5 {
 }
 
 ._perspective {
-  transform: translateY(150px) translateX(24px) translateZ(-0.4px) scale(1.45);
+  transform: translateZ(-0.4px) scale(1.45);
   transform-style: preserve-3d;
 }
 
@@ -95,7 +95,7 @@ pre code.hljs {
 .hljs-selector-class,
 .hljs-selector-id,
 .hljs-variable {
-  color: #6cb5ff;
+  color: #59acff;
 }
 .hljs-meta .hljs-string,
 .hljs-regexp,

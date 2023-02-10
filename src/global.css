@@ -1,0 +1,145 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/**==================================================================
+**			Font 
+**=================================================================*/
+@font-face {
+  font-family: "Domine";
+  font-weight: 100 900;
+  src: url("./src/assets/Inter-Regular.ttf") format("truetype-variations");
+}
+
+html {
+  @apply relative overflow-hidden bg-zinc-900 text-white;
+}
+
+body {
+  perspective: 1px;
+  transform-style: preserve-3d;
+  overflow-y: scroll;
+}
+
+::selection {
+  @apply bg-blue-300;
+}
+
+::-webkit-scrollbar {
+  width: 4px; /* width of the entire scrollbar */
+  height: 4px; /* width of the entire scrollbar */
+}
+
+::-webkit-scrollbar-track {
+  @apply rounded-full bg-zinc-900/10; /* color of the tracking area */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: theme(colors.zinc.400); /* color of the scroll thumb */
+  border-radius: 999px; /* roundness of the scroll thumb */
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  &:focus {
+    outline: rgba(0, 0, 0, 0.01) solid 1px;
+  }
+}
+
+._perspective {
+  transform: translateY(150px) translateX(24px) translateZ(-0.3px) scale(1.33);
+  transform-style: preserve-3d;
+}
+
+/*
+  Code theme
+  Based on vitesee
+  https://github.com/antfu/prism-theme-vars/blob/master/themes/vitesse-dark.css
+  
+*/
+/* pre code.hljs {
+  display: block;
+  overflow-x: auto;
+  padding: 1em;
+}
+code.hljs {
+  padding: 3px 5px;
+}
+.hljs,
+#bg_code {
+  color: #c98a7d;
+}
+.hljs-doctag,
+.hljs-keyword,
+.hljs-meta .hljs-keyword,
+.hljs-template-tag,
+.hljs-template-variable,
+.hljs-type,
+.hljs-variable.language_ {
+  color: #5da9a7;
+}
+.hljs-title,
+.hljs-title.class_,
+.hljs-title.class_.inherited__,
+.hljs-title.function_ {
+  color: #6893bf;
+}
+.hljs-attr,
+.hljs-attribute,
+.hljs-literal,
+.hljs-meta,
+.hljs-number,
+.hljs-operator,
+.hljs-selector-attr,
+.hljs-selector-class,
+.hljs-selector-id,
+.hljs-variable {
+  color: #4c9a91;
+}
+.hljs-meta .hljs-string,
+.hljs-regexp,
+.hljs-string {
+  color: #c98a7d;
+}
+.hljs-built_in,
+.hljs-symbol {
+  color: #cb7676;
+}
+.hljs-code,
+.hljs-comment,
+.hljs-formula {
+  color: #758575dd;
+}
+.hljs-name,
+.hljs-quote,
+.hljs-selector-pseudo,
+.hljs-selector-tag {
+  color: #c99076;
+}
+.hljs-subst {
+  color: #db889a;
+}
+.hljs-section {
+  color: #bd8f8f;
+  font-weight: 700;
+}
+.hljs-bullet {
+  color: #888888;
+}
+.hljs-emphasis {
+  color: #bd8f8f;
+  font-style: italic;
+}
+.hljs-strong {
+  color: #c99076;
+  font-weight: 700;
+}
+.hljs-addition {
+  color: #4d9375;
+}
+.hljs-deletion {
+  color: #cb7676;
+} */

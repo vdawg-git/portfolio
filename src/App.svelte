@@ -4,7 +4,7 @@
   import Footer from "./components/organisms/footer.svelte"
   import Home from "./components/pages/Home.svelte"
   import ridgebackASCI from "./lib/RidgebackASCI.txt?raw"
-  import { ROUTES } from "./lib/Routes"
+  // import { ROUTES } from "./lib/Routes"
   import Navbar from "./organisms/Navbar.svelte"
 
   initialzeCodeBackground()
@@ -14,19 +14,16 @@
   {@html `<!--${ridgebackASCI}-->`}
 {/if}
 
-<main class="h-full w-full bg-transparent">
+<main class="w-full bg-transparent">
   <Router>
     <Navbar />
-    <div
-      class="mx-auto flex  h-screen max-w-[45rem] flex-col items-center bg-transparent px-6 pt-24 lg:pt-12"
-    >
+    <div class="mx-auto mt-6 flex flex-col items-center bg-transparent">
       <Route path="/">
         <Home />
       </Route>
-      <Route path={ROUTES.sing} />
-      <!-- Default path if not found -->
       <Route>
-        <!-- <Home /> -->
+        <!-- Default path if not found -->
+        <Home />
       </Route>
     </div>
 

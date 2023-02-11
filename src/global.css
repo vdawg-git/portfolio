@@ -6,19 +6,35 @@
 **			Font 
 **=================================================================*/
 @font-face {
-  font-family: "Domine";
-  font-weight: 100 900;
-  src: url("./src/assets/Inter-Regular.ttf") format("truetype-variations");
+  font-family: "IBMPlexSans";
+  font-weight: regular;
+  src: url("./IBMPlexSans-Regular.ttf");
+}
+@font-face {
+  font-family: "IBMPlexSans";
+  font-weight: medium;
+  src: url("./IBMPlexSans-Medium.ttf");
+}
+@font-face {
+  font-family: "IBMPlexSans";
+  font-weight: bold;
+  src: url("./IBMPlexSans-Bold.ttf");
 }
 
 html {
-  @apply relative overflow-hidden bg-zinc-900 text-white;
+  position: relative;
+  overflow: hidden;
+  background-color: theme(colors.zinc[900]);
+  color: theme(colors.white);
 }
 
 body {
   perspective: 1px;
   transform-style: preserve-3d;
+  height: 100vh;
   overflow-y: scroll;
+  overflow-x: auto;
+  color: theme(colors.white);
 }
 
 ::selection {
@@ -50,8 +66,19 @@ h5 {
 }
 
 ._perspective {
-  transform: translateZ(-0.4px) scale(1.45);
+  transform: translateZ(-0.4px) scale(1.4);
   transform-style: preserve-3d;
+  contain: style layout size;
+}
+
+.text-shadow {
+  text-shadow: 0 0px 8px var(--tw-shadow-color, theme(colors.zinc[900])),
+    0 0px 16px var(--tw-shadow-color, theme(colors.zinc[900])),
+    0 0px 24px var(--tw-shadow-color, theme(colors.zinc[900]));
+
+  &::selection {
+    text-shadow: none;
+  }
 }
 
 /*

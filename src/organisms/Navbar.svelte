@@ -11,7 +11,7 @@
   }
 </script>
 
-<nav class="z-40 mt-8 flex w-screen items-center justify-center px-6">
+<nav class="z-40 mt-8 flex items-center justify-center">
   <div
     class="relative z-40 flex w-[748px] items-center justify-between rounded-full border border-zinc-400/30 bg-zinc-800/5 px-6 py-2 shadow-xl after:absolute after:inset-0 after:-z-10 after:rounded-full after:backdrop-blur-md"
   >

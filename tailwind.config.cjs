@@ -9,7 +9,7 @@ module.exports = {
     },
 
     extend: {
-      colors: { white: colors.zinc[200] },
+      colors: { white: colors.zinc[200], black: colors.zinc[900] },
       fontSize: { "2xs": "0.625rem" },
     },
   },

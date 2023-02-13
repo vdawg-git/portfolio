@@ -7,17 +7,17 @@
 **=================================================================*/
 @font-face {
   font-family: "IBMPlexSans";
-  font-weight: regular;
+  font-weight: normal;
   src: url("./IBMPlexSans-Regular.ttf");
 }
 @font-face {
   font-family: "IBMPlexSans";
-  font-weight: medium;
+  font-weight: 600;
   src: url("./IBMPlexSans-Medium.ttf");
 }
 @font-face {
   font-family: "IBMPlexSans";
-  font-weight: bold;
+  font-weight: 900;
   src: url("./IBMPlexSans-Bold.ttf");
 }
 
@@ -90,12 +90,12 @@ h5 {
 pre code.hljs {
   display: block;
   overflow-x: auto;
-  padding: 1em;
 }
 
 .hljs,
 #bg_code {
-  color: #a1c9f1;
+  color: #8adfcb;
+  font-weight: bold;
 }
 .hljs-doctag,
 .hljs-keyword,
@@ -104,13 +104,13 @@ pre code.hljs {
 .hljs-template-variable,
 .hljs-type,
 .hljs-variable.language_ {
-  color: #f47067;
+  color: #ea4236;
 }
 .hljs-title,
 .hljs-title.class_,
 .hljs-title.class_.inherited__,
 .hljs-title.function_ {
-  color: #6893bf;
+  color: #7746ff;
 }
 .hljs-attr,
 .hljs-attribute,
@@ -122,21 +122,21 @@ pre code.hljs {
 .hljs-selector-class,
 .hljs-selector-id,
 .hljs-variable {
-  color: #59acff;
+  color: #00a2ff;
 }
 .hljs-meta .hljs-string,
 .hljs-regexp,
 .hljs-string {
-  color: #7fc5fe;
+  color: #51dcff;
 }
 .hljs-built_in,
 .hljs-symbol {
-  color: #cb7676;
+  color: #ff3f3f;
 }
 .hljs-code,
 .hljs-comment,
 .hljs-formula {
-  color: #768390;
+  color: #5b92bc;
 }
 .hljs-comment {
   line-height: 1;
@@ -146,10 +146,10 @@ pre code.hljs {
 .hljs-quote,
 .hljs-selector-pseudo,
 .hljs-selector-tag {
-  color: #8ddb8c;
+  color: #3ce6be;
 }
 .hljs-subst {
-  color: #db889a;
+  color: #ff2e5b;
 }
 .hljs-section {
   color: #bd8f8f;

@@ -33,9 +33,14 @@ onmessage = (event: MessageEvent<BackgroundCodeArgument>) => {
     : undefined
 
   // Prevent the string from being truthy with one space
-  lastResult = result.trim() ? result : undefined
 
-  diffed ? postDiffAndResult(diffed, result) : postMessage(result)
+  diffEndTimeout = setTimeout(() => {
+    lastResult = result.trim() ? result : undefined
+
+    console.log("Sending result")
+
+    diffed ? postDiffAndResult(diffed, result) : postMessage(result)
+  }, 40)
 }
 
 function postDiffAndResult(diffed: string, result: string) {

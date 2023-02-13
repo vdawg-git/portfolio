@@ -5,46 +5,55 @@
   import GithubIcon from "virtual:icons/uil/github"
   import GlobeIcon from "virtual:icons/uil/globe"
   import ArrowCircleDownIcon from "virtual:icons/uil/arrow-circle-down"
+
+  let cardsElement: HTMLElement | undefined
 </script>
 
 <!-- Hero -->
-<div
-  class="flex min-h-[min(calc(100vh-82px),1100px)] flex-col pt-20 text-center"
->
+<div class="flex min-h-[min(calc(100vh-82px),1100px)] flex-col text-center">
   <div class="mb-6 flex grow flex-col items-center justify-center">
     <h2 class="text-shadow  uppercase text-zinc-400">
       Designer and Front-End Developer
     </h2>
-    <h1 class="text-shadow mb-6 mt-6 text-8xl font-bold ">Hi, im Christofer</h1>
+
+    <h1 class=" _gradient-heading mb-6 mt-6 text-8xl  font-bold">
+      Hi, im Christofer
+    </h1>
+
     <div
-      class="text-shadow flex flex-col gap-1 text-xl font-bold text-zinc-400 "
+      class="text-shadow mb-12 flex flex-col gap-1 text-xl font-bold text-zinc-400"
     >
       <p class="text-shadow">I like to code, design and shoot pictures.</p>
       <p class="text-shadow">MacGruber is the best film.</p>
     </div>
+
+    <Button
+      label="Press to say hi too"
+      href="mailto:imchris@tuta.io"
+      isBig
+      classes="mx-auto"
+      on:click={() => console.log("Hii")}
+    />
   </div>
 
-  <Button
-    label="Press to say hi"
-    href="mailto:imchris@tuta.io"
-    isBig
-    classes="mx-auto"
-    on:click={() => console.log("Hii")}
-  />
-
-  <div class="mt-14 flex flex-col items-center gap-2 pb-12 text-zinc-400">
+  <button
+    class="mt-14 flex flex-col items-center gap-2 pb-12 text-zinc-400 transition-colors hover:text-white"
+    on:click={() => cardsElement.scrollIntoView({ behavior: "smooth" })}
+  >
     <div class="">Projects</div>
     <ArrowCircleDownIcon class="h-8 w-8" />
-  </div>
+  </button>
 </div>
 
 <!-- Cards -->
-<div class="flex flex-col items-center justify-center gap-36" id="projects">
+<div
+  class="flex flex-col items-center justify-center gap-36 pt-6"
+  bind:this={cardsElement}
+>
   <Card
     name="Sing"
-    text="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo impedit reprehenderit corrupti eum voluptas quidem corporis voluptate tenetur dolorem. 
-Suscipit voluptatum deleniti labore nulla rerum aspernatur adipisci."
-    image="/placeholder.jpg"
+    text="A modern simple music library with great design."
+    image="/Logo img.png"
     route="sing"
     externals={[
       { Icon: GithubIcon, to: "https://github.com/Visual-Dawg/sing/" },
@@ -52,9 +61,8 @@ Suscipit voluptatum deleniti labore nulla rerum aspernatur adipisci."
   />
   <Card
     name="Numerology Toolbox"
-    text="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo impedit reprehenderit corrupti eum voluptas quidem corporis voluptate tenetur dolorem. 
-Suscipit voluptatum deleniti labore nulla rerum aspernatur adipisci."
-    image="/placeholder.jpg"
+    text="Small app to calculate numerological values."
+    image="/numerology thumb.png"
     route="numerology"
     externals={[
       { Icon: GlobeIcon, to: "https://numerology-toolbelt.surge.sh/" },
@@ -67,4 +75,17 @@ Suscipit voluptatum deleniti labore nulla rerum aspernatur adipisci."
 </div>
 
 <style lang="postcss">
+  ._gradient-heading {
+    background: linear-gradient(
+      to right bottom,
+      theme(colors.zinc[200]) 60%,
+      rgba(42, 89, 130, 0.03)
+    );
+    background-clip: text;
+    color: transparent;
+
+    &::selection {
+      color: theme(colors.white);
+    }
+  }
 </style>

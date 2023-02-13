@@ -1,6 +1,9 @@
 <script lang="ts">
-  import type { SvelteComponent } from "svelte"
+  import clsx from "clsx"
+  import { onMount, type SvelteComponent } from "svelte"
   import { Link } from "svelte-navigator"
+
+  import ArrowCircleRightIcon from "virtual:icons/uil/arrow-circle-right"
 
   type external = { Icon: typeof SvelteComponent; to: string }
 
@@ -9,31 +12,70 @@
   export let image: string
   export let externals: external[] | undefined = undefined
   export let route: string
+
+  let wrapperElement: HTMLElement | undefined
+  let hasEnteredViewport = false
+
+  const observerIn = new IntersectionObserver(
+    (entries, _observer) => {
+      for (const { isIntersecting } of entries) {
+        if (!isIntersecting) return
+
+        hasEnteredViewport = true
+        observerIn.disconnect()
+        break
+      }
+    },
+    { threshold: 0.35 }
+  )
+
+  onMount(() => {
+    observerIn.observe(wrapperElement)
+
+    return () => observerIn.disconnect()
+  })
 </script>
 
 <div
-  class="flex h-[30rem] w-[60rem] items-center gap-16 max-md:container  max-md:h-auto max-md:flex-col-reverse"
+  class=" mx-8 flex h-[30rem] items-center gap-16  max-lg:h-auto max-lg:flex-col-reverse max-lg:justify-center max-lg:text-center max-md:container lg:w-[60rem] "
+  bind:this={wrapperElement}
 >
   <!-- Text -->
-  <div class="text-shadow  flex h-full shrink grow flex-col justify-center ">
+  <div
+    class={clsx(
+      "text-shadow  flex h-full min-w-[25rem] flex-col justify-center opacity-100 transition-opacity  duration-[1100ms] max-lg:items-center",
+      hasEnteredViewport
+        ? "translate-y-0 scale-100 opacity-100"
+        : "translate-y-12 scale-95 opacity-0"
+    )}
+  >
     <!-- Heading -->
     <Link to={route}>
-      <h3
-        class="text-shadow mb-4 text-6xl uppercase transition-colors  hover:text-zinc-400"
-      >
+      <h3 class="text-shadow mb-4 text-6xl font-bold uppercase">
         {name}
       </h3>
     </Link>
 
     <!-- Paragraph -->
-    <p class="text-shadow mb-6 max-w-prose text-zinc-400 ">{text}</p>
+    <p class="text-shadow mb-4 max-w-prose text-xl text-zinc-400 ">{text}</p>
+
+    <!-- See more -->
+    <Link to={route}>
+      <div
+        class={"mb-6 flex max-w-max items-center gap-2 text-zinc-400 transition-all hover:translate-x-1 hover:text-zinc-200"}
+      >
+        See more<ArrowCircleRightIcon class="h-6 w-6" />
+      </div>
+    </Link>
 
     <!-- Icons -->
     {#if externals}
       <div class="flex gap-3">
         {#each externals as { Icon, to }}
           <a href={to} target="_blank" rel="noreferrer noopener">
-            <Icon class="h-6 w-6 text-zinc-400 hover:text-zinc-500" />
+            <Icon
+              class="h-6 w-6 text-zinc-400 transition-all hover:scale-105 hover:text-white"
+            />
           </a>
         {/each}
       </div>
@@ -41,13 +83,23 @@
   </div>
 
   <!-- Image -->
-  <div class="shrink-0 grow-0">
+  <div
+    class={clsx(
+      "overflow-hidden   rounded-3xl object-contain opacity-100 shadow-2xl  backdrop-blur-sm transition-all duration-[1600ms] after:absolute hover:scale-[1.05] max-lg:w-96",
+      hasEnteredViewport
+        ? "translate-y-0 scale-100 bg-amber-900/5 opacity-100"
+        : "translate-y-12 scale-95 bg-zinc-900 opacity-0  delay-[450ms]"
+    )}
+  >
     <Link to={route}>
       <img
         src={image}
         alt="{name} thumbnail"
-        class="aspect-square h-[30rem] rounded-3xl shadow-2xl max-md:h-[20rem]"
+        class="aspect-square h-full  max-md:h-full "
       />
     </Link>
   </div>
 </div>
+
+<style lang="postcss">
+</style>

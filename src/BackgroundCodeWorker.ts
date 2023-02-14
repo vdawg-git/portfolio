@@ -37,7 +37,7 @@ onmessage = (event: MessageEvent<BackgroundCodeArgument>) => {
   diffEndTimeout = setTimeout(() => {
     lastResult = result.trim() ? result : undefined
 
-    console.log("Sending result")
+    console.log("result")
 
     diffed ? postDiffAndResult(diffed, result) : postMessage(result)
   }, 40)
@@ -45,7 +45,7 @@ onmessage = (event: MessageEvent<BackgroundCodeArgument>) => {
 
 function postDiffAndResult(diffed: string, result: string) {
   postMessage(diffed)
-  diffEndTimeout = setTimeout(() => postMessage(result), 850)
+  setTimeout(() => postMessage(result), 1250)
 }
 
 function highlightHTML(html: string): string {

@@ -172,3 +172,40 @@ pre code.hljs {
 .hljs-deletion {
   color: #cb7676;
 }
+
+.prose_ {
+  & p {
+    @apply mt-1 text-zinc-400;
+  }
+  & h3 {
+    @apply mt-16 mb-4 text-center text-3xl font-bold;
+  }
+
+  & *::selection {
+    text-shadow: none;
+  }
+
+  & a {
+    @apply font-medium;
+  }
+
+  > .subtext {
+    font-size: 12px;
+    font-weight: medium;
+    color: theme(colors.zinc[400]);
+    text-align: center;
+  }
+
+  & > img,
+  & > video {
+    min-width: none;
+    margin-left: 0px;
+    margin-top: 2rem;
+    @apply rounded-2xl shadow-md;
+
+    @media screen(md) {
+      min-width: 130%;
+      margin-left: -15%;
+    }
+  }
+}

@@ -3,6 +3,7 @@
   import { initialzeCodeBackground } from "./BackgroundCode"
   import Footer from "./components/organisms/footer.svelte"
   import Home from "./components/pages/Home.svelte"
+  import Numerology from "./components/pages/Numerology.svelte"
   import Sing from "./components/pages/Sing.svelte"
   import Navbar from "./organisms/Navbar.svelte"
 
@@ -24,6 +25,9 @@
       </Route>
       <Route path="/sing">
         <Sing />
+      </Route>
+      <Route path="/numerology">
+        <Numerology />
       </Route>
       <Route>
         <!-- Default path if not found -->

@@ -15,6 +15,8 @@
   on:click
   on:keydown
   {href}
+  rel={href && "noreferrer noopener"}
+  target={href && "_blank"}
   class={clsx(
     "_custom relative block  max-w-max rounded-md  border border-zinc-400/50 shadow-md after:absolute after:inset-0 after:-z-10  after:rounded-md after:bg-zinc-900/5 after:backdrop-blur-sm hover:bg-zinc-100/20",
     isBig ? "px-8 py-4 text-base" : "px-6 py-3 text-sm",

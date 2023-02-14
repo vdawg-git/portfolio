@@ -2,17 +2,12 @@
   import { onMount } from "svelte"
   import { clsx } from "clsx"
   import GithubIcon from "virtual:icons/uil/github"
+  import Logo from "../atoms/Logo.svelte"
 
   let hasUserScrolled = false
   let coverElement: HTMLElement
   let coverHasEnteredViewport = false
   $: shouldAnimateCover = hasUserScrolled && coverHasEnteredViewport
-
-  $: console.log({
-    shouldAnimateCover,
-    hasUserScrolled,
-    coverHasEnteredViewport,
-  })
 
   const coverObserver = new IntersectionObserver(
     (entries, observer) => {
@@ -95,7 +90,7 @@
 </div>
 
 <!-- Content-->
-<div class="text-shadow _prose mx-8 max-w-prose text-base">
+<div class="text-shadow prose_ mx-8 max-w-prose text-base">
   <h3>Background</h3>
   <p>
     I found that existing music library applications were lacking in aesthetics
@@ -109,53 +104,41 @@
 
   <h3>Techstack</h3>
   <div class="my-8 flex flex-wrap justify-center gap-8">
-    <a href="https://svelte.dev/" target="_blank" rel="noopener noreferrer"
-      ><img
-        class="h-20 w-20 transition-transform hover:scale-105"
-        src="svelte-icon.svg"
-        alt="Svelte logo"
-      /></a
-    >
-    <a href="https://tailwindcss.com/" target="_blank" rel="noopener noreferrer"
-      ><img
-        class="h-20 w-20 transition-transform hover:scale-105"
-        src="tailwindcss-icon.svg"
-        alt="TailwindCSS logo"
-      /></a
-    >
-    <a
+    <Logo name="Svelte" href="https://svelte.dev/" icon="svelte-icon.svg" />
+    <Logo
+      name="TailwindCSS"
+      href="https://tailwindcss.com/"
+      icon="tailwindcss-icon.svg"
+    />
+    <Logo
+      name="Typescript"
       href="https://www.typescriptlang.org/"
-      target="_blank"
-      rel="noopener noreferrer"
-      ><img
-        alt="Typescript logo"
-        class="h-20 w-20 transition-transform hover:scale-105"
-        src="typescript-icon.svg"
-      /></a
-    >
-    <a href="https://prisma.io/" target="_blank" rel="noopener noreferrer">
-      <img
-        alt="Prisma logo"
-        class="h-20 w-20 rounded-lg bg-zinc-200 p-2 transition-transform hover:scale-105"
-        src="prisma.svg"
-      />
-    </a>
-    <a
+      icon="typescript-icon.svg"
+    />
+    <Logo
+      name="Prisma"
+      href="https://prisma.io/"
+      icon="prisma.svg"
+      classes="bg-zinc-200 rounded-xl p-2"
+    />
+    <Logo
+      name="Electron"
       href="https://www.electronjs.org/"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      <img
-        alt="Electron logo"
-        class="h-20 w-20 rounded-lg bg-zinc-800 p-2 transition-transform hover:scale-105"
-        src="electron.svg"
-      />
-    </a>
+      icon="electron.svg"
+      classes="bg-zinc-800 rounded-xl p-2"
+    />
+    <Logo
+      name="Playwright"
+      href="https://playwright.dev/"
+      icon="playwright.svg"
+    />
+    <Logo href="https://vitest.dev/" icon="vitest.svg" name="Vitest" />
   </div>
   <p>
     To develop my music library application, I used Svelte, TypeScript,
     TailwindCSS, Electron, and Prisma with SQLite. These tools allowed me to
     (relatively) easily and practically create the app.
+    <br />Testing is handled with Vitest and Playwright.
   </p>
 
   <h3>Design</h3>
@@ -181,39 +164,6 @@
 </div>
 
 <style lang="postcss">
-  ._prose {
-    & p {
-      @apply mt-1 text-zinc-400;
-    }
-    & h3 {
-      @apply mt-16 mb-4 text-center text-3xl font-bold;
-    }
-
-    & *::selection {
-      text-shadow: none;
-    }
-
-    > .subtext {
-      font-size: 12px;
-      font-weight: medium;
-      color: theme(colors.zinc[400]);
-      text-align: center;
-    }
-
-    & > img,
-    & > video {
-      min-width: none;
-      margin-left: 0px;
-      margin-top: 2rem;
-      @apply rounded-2xl shadow-md;
-
-      @media screen(md) {
-        min-width: 130%;
-        margin-left: -15%;
-      }
-    }
-  }
-
   ._cover-wrapper {
     perspective: 500px;
   }

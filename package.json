@@ -1,5 +1,6 @@
 {
-  "name": "numerology_tools",
+  "name": "visual-dawg-portfolfio",
+  "homepage": "https://visual-dawg.github.io/",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -8,7 +9,7 @@
     "build": "vite build && node Create200Page.js",
     "preview": "vite preview",
     "test": "vitest",
-    "deploy": "npm run build && surge ./dist numerology-toolbelt.surge.sh"
+    "deploy": "npm run build && gh-pages -d dist"
   },
   "devDependencies": {
     "@sveltejs/vite-plugin-svelte": "^2.0.2",
@@ -16,6 +17,7 @@
     "@types/diff": "^5.0.2",
     "@types/prettier": "^2.7.2",
     "autoprefixer": "^10.4.13",
+    "gh-pages": "^5.0.0",
     "postcss": "^8.4.20",
     "svelte": "^3.55.0",
     "svelte-preprocess": "^5.0.0",

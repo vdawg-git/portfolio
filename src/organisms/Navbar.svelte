@@ -11,16 +11,18 @@
   }
 </script>
 
-<nav class="z-40 mt-8 flex items-center justify-center">
+<nav
+  class="z-40 mt-8 flex items-center justify-center text-sm font-bold tracking-wide"
+>
   <div
     class="relative z-40 flex w-[748px] items-center justify-between  px-6 py-2"
   >
-    <div class="text-sm md:text-lg">
+    <div class="">
       <Link to="/"
         ><div class="flex items-center gap-3">
           <img
             src="Logo.svg"
-            class="-ml-2 h-10 w-10"
+            class="-ml-2 h-12 w-12"
             alt="Christofer Koeth Logo"
           /> Christofer
         </div></Link
@@ -28,7 +30,7 @@
     </div>
 
     <!-- Desktop & Tablet-->
-    <ul class="hidden gap-4 text-sm sm:visible sm:flex">
+    <ul class="hidden gap-4 text-sm  sm:visible sm:flex">
       <a href="mailto:imchris@tuta.io">
         <li class="hover:text-zinc-300">Contact</li>
       </a>

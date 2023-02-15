@@ -23,7 +23,7 @@
     <div
       class="text-shadow mb-12 flex flex-col gap-1 text-xl font-bold text-zinc-400"
     >
-      <p class="text-shadow">I like to code, design and shoot pictures.</p>
+      <p class="text-shadow">I like to code, design and take photographs.</p>
       <p class="text-shadow">MacGruber is the best film.</p>
     </div>
 
@@ -36,13 +36,15 @@
     />
   </div>
 
-  <button
-    class="mt-14 flex flex-col items-center gap-2 pb-12 text-zinc-400 transition-colors hover:text-white"
-    on:click={() => cardsElement.scrollIntoView({ behavior: "smooth" })}
-  >
-    <div class="">Projects</div>
-    <ArrowCircleDownIcon class="h-8 w-8" />
-  </button>
+  <div class="flex grow justify-center">
+    <button
+      class=" flex flex-col items-center gap-2 pb-12 text-zinc-400 transition-colors hover:text-white"
+      on:click={() => cardsElement.scrollIntoView({ behavior: "smooth" })}
+    >
+      <div class="">Projects</div>
+      <ArrowCircleDownIcon class="h-8 w-8" />
+    </button>
+  </div>
 </div>
 
 <!-- Cards -->

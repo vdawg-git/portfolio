@@ -8,17 +8,17 @@
 @font-face {
   font-family: "IBMPlexSans";
   font-weight: normal;
-  src: url("./IBMPlexSans-Regular.ttf");
+  src: url("IBMPlexSans-Regular.ttf");
 }
 @font-face {
   font-family: "IBMPlexSans";
   font-weight: 600;
-  src: url("./IBMPlexSans-Medium.ttf");
+  src: url("IBMPlexSans-Medium.ttf");
 }
 @font-face {
   font-family: "IBMPlexSans";
   font-weight: 900;
-  src: url("./IBMPlexSans-Bold.ttf");
+  src: url("IBMPlexSans-Bold.ttf");
 }
 
 html {
@@ -94,7 +94,7 @@ pre code.hljs {
 
 .hljs,
 #bg_code {
-  color: #8adfcb;
+  color: #68b4a2;
   font-weight: bold;
 }
 .hljs-doctag,
@@ -145,7 +145,8 @@ pre code.hljs {
 .hljs-name,
 .hljs-quote,
 .hljs-selector-pseudo,
-.hljs-selector-tag {
+.hljs-selector-tag,
+.hljs-tag {
   color: #3ce6be;
 }
 .hljs-subst {

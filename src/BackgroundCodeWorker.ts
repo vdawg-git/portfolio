@@ -8,7 +8,10 @@ import parserHTML from "prettier/parser-html"
 
 import type { BackgroundCodeArgument } from "#types/Types"
 
-const colors = { green: "rgba(70,149,74,0.25)", red: "rgba(229,83,75,0.25)" }
+const colors = {
+  green: "rgb(0, 255, 200, 0.25)",
+  red: "rgba(229,83,75,0.25)",
+}
 const longStringsRegex = /(?<==")([^"]{20,})(?=")/gm
 const noContentTagsRegex = /(<(\w*)[^>]*)><\/\2>/gm
 
@@ -37,7 +40,7 @@ onmessage = (event: MessageEvent<BackgroundCodeArgument>) => {
   diffEndTimeout = setTimeout(() => {
     lastResult = result.trim() ? result : undefined
 
-    console.log("result")
+    console.log(diffed)
 
     diffed ? postDiffAndResult(diffed, result) : postMessage(result)
   }, 40)

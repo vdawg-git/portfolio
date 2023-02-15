@@ -82,7 +82,7 @@
 <!-- Cover -->
 <div
   class={clsx(
-    "_cover-wrapper h-[637px] w-[900px] px-0 transition-all duration-[1575ms]"
+    "_cover-wrapper h-[637px] w-[900px] px-0 transition-all duration-[1575ms] max-lg:h-[495px] max-lg:w-[700px] max-md:h-[340px] max-md:w-[480px]"
   )}
   bind:this={coverElement}
 >

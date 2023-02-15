@@ -13,12 +13,16 @@
 
 <nav class="z-40 mt-8 flex items-center justify-center">
   <div
-    class="relative z-40 flex w-[748px] items-center justify-between rounded-full border border-zinc-400/30 bg-zinc-800/5 px-6 py-2 shadow-xl after:absolute after:inset-0 after:-z-10 after:rounded-full after:backdrop-blur-md"
+    class="relative z-40 flex w-[748px] items-center justify-between  px-6 py-2"
   >
     <div class="text-sm md:text-lg">
       <Link to="/"
         ><div class="flex items-center gap-3">
-          <img src="Logo.svg" class="h-8 w-8" alt="Christofer Koeth Logo" /> Christofer
+          <img
+            src="Logo.svg"
+            class="-ml-2 h-10 w-10"
+            alt="Christofer Koeth Logo"
+          /> Christofer
         </div></Link
       >
     </div>

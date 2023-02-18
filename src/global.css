@@ -6,53 +6,53 @@
 **			Font 
 **=================================================================*/
 @font-face {
-  font-family: "IBMPlexSans";
-  font-weight: normal;
-  src: url("IBMPlexSans-Regular.ttf");
+	font-family: "IBMPlexSans";
+	font-weight: normal;
+	src: url("IBMPlexSans-Regular.ttf");
 }
 @font-face {
-  font-family: "IBMPlexSans";
-  font-weight: 600;
-  src: url("IBMPlexSans-Medium.ttf");
+	font-family: "IBMPlexSans";
+	font-weight: 600;
+	src: url("IBMPlexSans-Medium.ttf");
 }
 @font-face {
-  font-family: "IBMPlexSans";
-  font-weight: 900;
-  src: url("IBMPlexSans-Bold.ttf");
+	font-family: "IBMPlexSans";
+	font-weight: 900;
+	src: url("IBMPlexSans-Bold.ttf");
 }
 
 html {
-  position: relative;
-  overflow: hidden;
-  background-color: theme(colors.zinc[900]);
-  color: theme(colors.white);
+	position: relative;
+	overflow: hidden;
+	background-color: theme(colors.zinc[900]);
+	color: theme(colors.white);
 }
 
 body {
-  perspective: 1px;
-  transform-style: preserve-3d;
-  height: 100vh;
-  overflow-y: scroll;
-  overflow-x: auto;
-  color: theme(colors.white);
+	perspective: 1px;
+	transform-style: preserve-3d;
+	height: 100vh;
+	overflow-y: scroll;
+	overflow-x: auto;
+	color: theme(colors.white);
 }
 
 ::selection {
-  @apply bg-blue-300;
+	@apply bg-blue-300;
 }
 
 ::-webkit-scrollbar {
-  width: 4px; /* width of the entire scrollbar */
-  height: 4px; /* width of the entire scrollbar */
+	width: 4px; /* width of the entire scrollbar */
+	height: 4px; /* width of the entire scrollbar */
 }
 
 ::-webkit-scrollbar-track {
-  @apply rounded-full bg-zinc-900/10; /* color of the tracking area */
+	@apply rounded-full bg-zinc-900/10; /* color of the tracking area */
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: theme(colors.zinc.400); /* color of the scroll thumb */
-  border-radius: 999px; /* roundness of the scroll thumb */
+	background-color: theme(colors.zinc.400); /* color of the scroll thumb */
+	border-radius: 999px; /* roundness of the scroll thumb */
 }
 
 h1,
@@ -60,25 +60,25 @@ h2,
 h3,
 h4,
 h5 {
-  &:focus {
-    outline: rgba(0, 0, 0, 0.01) solid 1px;
-  }
+	&:focus {
+		outline: rgba(0, 0, 0, 0.01) solid 1px;
+	}
 }
 
 ._perspective {
-  transform: translateZ(-0.4px) scale(1.4);
-  transform-style: preserve-3d;
-  contain: style layout size;
+	transform: translateZ(-0.4px) scale(1.4);
+	transform-style: preserve-3d;
+	contain: style layout size;
 }
 
 .text-shadow {
-  text-shadow: 0 0px 8px var(--tw-shadow-color, theme(colors.zinc[900])),
-    0 0px 16px var(--tw-shadow-color, theme(colors.zinc[900])),
-    0 0px 24px var(--tw-shadow-color, theme(colors.zinc[900]));
+	text-shadow: 0 0px 8px var(--tw-shadow-color, theme(colors.zinc[900])),
+		0 0px 16px var(--tw-shadow-color, theme(colors.zinc[900])),
+		0 0px 24px var(--tw-shadow-color, theme(colors.zinc[900]));
 
-  &::selection {
-    text-shadow: none;
-  }
+	&::selection {
+		text-shadow: none;
+	}
 }
 
 /*
@@ -88,14 +88,14 @@ h5 {
   
 */
 pre code.hljs {
-  display: block;
-  overflow-x: auto;
+	display: block;
+	overflow-x: auto;
 }
 
 .hljs,
 #bg_code {
-  color: #68b4a2;
-  font-weight: bold;
+	color: #68b4a2;
+	font-weight: bold;
 }
 .hljs-doctag,
 .hljs-keyword,
@@ -104,13 +104,13 @@ pre code.hljs {
 .hljs-template-variable,
 .hljs-type,
 .hljs-variable.language_ {
-  color: #ea4236;
+	color: #ea4236;
 }
 .hljs-title,
 .hljs-title.class_,
 .hljs-title.class_.inherited__,
 .hljs-title.function_ {
-  color: #7746ff;
+	color: #7746ff;
 }
 .hljs-attr,
 .hljs-attribute,
@@ -122,91 +122,91 @@ pre code.hljs {
 .hljs-selector-class,
 .hljs-selector-id,
 .hljs-variable {
-  color: #00a2ff;
+	color: #00a2ff;
 }
 .hljs-meta .hljs-string,
 .hljs-regexp,
 .hljs-string {
-  color: #51dcff;
+	color: #51dcff;
 }
 .hljs-built_in,
 .hljs-symbol {
-  color: #ff3f3f;
+	color: #ff3f3f;
 }
 .hljs-code,
 .hljs-comment,
 .hljs-formula {
-  color: #5b92bc;
+	color: #5b92bc;
 }
 .hljs-comment {
-  line-height: 1;
-  display: inline-block;
+	line-height: 1;
+	display: inline-block;
 }
 .hljs-name,
 .hljs-quote,
 .hljs-selector-pseudo,
 .hljs-selector-tag,
 .hljs-tag {
-  color: #3ce6be;
+	color: #3ce6be;
 }
 .hljs-subst {
-  color: #ff2e5b;
+	color: #ff2e5b;
 }
 .hljs-section {
-  color: #bd8f8f;
-  font-weight: 700;
+	color: #bd8f8f;
+	font-weight: 700;
 }
 .hljs-bullet {
-  color: #888888;
+	color: #888888;
 }
 .hljs-emphasis {
-  color: #bd8f8f;
-  font-style: italic;
+	color: #bd8f8f;
+	font-style: italic;
 }
 .hljs-strong {
-  color: #c99076;
-  font-weight: 700;
+	color: #c99076;
+	font-weight: 700;
 }
 .hljs-addition {
-  color: #4d9375;
+	color: #4d9375;
 }
 .hljs-deletion {
-  color: #cb7676;
+	color: #cb7676;
 }
 
 .prose_ {
-  & p {
-    @apply mt-1 text-zinc-400;
-  }
-  & h3 {
-    @apply mt-16 mb-4 text-center text-3xl font-bold;
-  }
+	& p {
+		@apply mt-1 text-zinc-400;
+	}
+	& h3 {
+		@apply mt-16 mb-4 text-center text-3xl font-bold;
+	}
 
-  & *::selection {
-    text-shadow: none;
-  }
+	& *::selection {
+		text-shadow: none;
+	}
 
-  & a {
-    @apply font-medium;
-  }
+	& a {
+		@apply font-medium;
+	}
 
-  > .subtext {
-    font-size: 12px;
-    font-weight: medium;
-    color: theme(colors.zinc[400]);
-    text-align: center;
-  }
+	> .subtext {
+		font-size: 12px;
+		font-weight: medium;
+		color: theme(colors.zinc[400]);
+		text-align: center;
+	}
 
-  & > img,
-  & > video {
-    min-width: none;
-    margin-left: 0px;
-    margin-top: 2rem;
-    @apply rounded-2xl shadow-md;
+	& > img,
+	& > video {
+		min-width: none;
+		margin-left: 0px;
+		margin-top: 2rem;
+		@apply rounded-2xl shadow-md;
 
-    @media screen(md) {
-      min-width: 130%;
-      margin-left: -15%;
-    }
-  }
+		@media screen(md) {
+			min-width: 130%;
+			margin-left: -15%;
+		}
+	}
 }

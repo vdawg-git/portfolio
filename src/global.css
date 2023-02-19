@@ -24,7 +24,7 @@
 html {
 	position: relative;
 	overflow: hidden;
-	background-color: theme(colors.zinc[900]);
+	background-color: theme(colors.black);
 	color: theme(colors.white);
 }
 
@@ -34,25 +34,11 @@ body {
 	height: 100vh;
 	overflow-y: scroll;
 	overflow-x: auto;
-	color: theme(colors.white);
+	background-color: theme(colors.black);
 }
 
 ::selection {
 	@apply bg-blue-300;
-}
-
-::-webkit-scrollbar {
-	width: 4px; /* width of the entire scrollbar */
-	height: 4px; /* width of the entire scrollbar */
-}
-
-::-webkit-scrollbar-track {
-	@apply rounded-full bg-zinc-900/10; /* color of the tracking area */
-}
-
-::-webkit-scrollbar-thumb {
-	background-color: theme(colors.zinc.400); /* color of the scroll thumb */
-	border-radius: 999px; /* roundness of the scroll thumb */
 }
 
 h1,
@@ -110,7 +96,7 @@ pre code.hljs {
 .hljs-title.class_,
 .hljs-title.class_.inherited__,
 .hljs-title.function_ {
-	color: #7746ff;
+	color: #4400ff;
 }
 .hljs-attr,
 .hljs-attribute,
@@ -127,11 +113,11 @@ pre code.hljs {
 .hljs-meta .hljs-string,
 .hljs-regexp,
 .hljs-string {
-	color: #51dcff;
+	color: #20d2ff;
 }
 .hljs-built_in,
 .hljs-symbol {
-	color: #ff3f3f;
+	color: #7c3fff;
 }
 .hljs-code,
 .hljs-comment,
@@ -147,7 +133,7 @@ pre code.hljs {
 .hljs-selector-pseudo,
 .hljs-selector-tag,
 .hljs-tag {
-	color: #3ce6be;
+	color: #2aeac7;
 }
 .hljs-subst {
 	color: #ff2e5b;

@@ -3,31 +3,24 @@
 	import { clsx } from "clsx"
 	import GithubIcon from "virtual:icons/uil/github"
 	import Logo from "$lib/components/atoms/Logo.svelte"
+	import { intersect } from "svelte-intersection-observer-action"
 
 	let hasUserScrolled = false
-	let coverElement: HTMLElement
 	let coverHasEnteredViewport = false
 	$: shouldAnimateCover = hasUserScrolled && coverHasEnteredViewport
 
-	const coverObserver = new IntersectionObserver(
-		(entries, observer) => {
-			for (const entry of entries) {
-				if (!entry.isIntersecting) return
-
-				coverHasEnteredViewport = true
-				observer.disconnect()
-			}
-		},
-		{ threshold: 0.6 }
-	)
+	// Scroll to top after navigation. See https://github.com/sveltejs/kit/pull/8723
+	globalThis.document && document.body.scrollTo({ top: 0, behavior: "auto" })
 
 	onMount(() => {
-		coverObserver.observe(coverElement)
-		document.body.addEventListener("scroll", setHasUserScrolled)
+		// Nessecary as the workaround above triggers the scroll event.
+		setTimeout(
+			() => document.body.addEventListener("scroll", setHasUserScrolled),
+			100
+		)
 
 		return () => {
 			document.body.removeEventListener("scroll", setHasUserScrolled)
-			coverObserver.disconnect()
 		}
 	})
 	function setHasUserScrolled() {
@@ -71,7 +64,10 @@
 	class={clsx(
 		"_cover-wrapper  h-[637px]  w-[900px] px-0 transition-all duration-[1575ms] max-lg:h-[495px] max-lg:w-[700px] max-md:h-[340px] max-md:w-[480px]"
 	)}
-	bind:this={coverElement}
+	use:intersect={{
+		callback: () => (coverHasEnteredViewport = true),
+		threshold: 0.5
+	}}
 >
 	<img
 		alt="Sing screenshot"

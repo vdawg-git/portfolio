@@ -56,7 +56,7 @@
 		name="Sing"
 		text="A modern simple music library with great design."
 		image="/Logo img.png"
-		route="sing"
+		route="/sing"
 		externals={[
 			{ Icon: GithubIcon, to: "https://github.com/Visual-Dawg/sing/" }
 		]}
@@ -65,7 +65,7 @@
 		name="Numerology Toolbox"
 		text="Small app to calculate numerological values."
 		image="/numerology thumb.png"
-		route="numerology"
+		route="/numerology"
 		externals={[
 			{ Icon: GlobeIcon, to: "https://numerology-toolbelt.surge.sh/" },
 			{

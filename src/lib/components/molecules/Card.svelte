@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { goto } from "$app/navigation"
 	import clsx from "clsx"
 	import { onMount, type SvelteComponent } from "svelte"
 
@@ -37,6 +38,10 @@
 
 		return () => observerIn.disconnect()
 	})
+
+	function goToNoScroll(url: string) {
+		return () => goto(url, { noScroll: true })
+	}
 </script>
 
 <div
@@ -53,7 +58,7 @@
 		)}
 	>
 		<!-- Heading -->
-		<a href={route}>
+		<a href={route} on:click|preventDefault={goToNoScroll(route)}>
 			<h3 class="text-shadow mb-4 text-6xl font-bold uppercase">
 				{name}
 			</h3>
@@ -63,7 +68,7 @@
 		<p class="text-shadow mb-4 max-w-prose text-xl text-zinc-400 ">{text}</p>
 
 		<!-- See more -->
-		<a href={route}>
+		<a href={route} on:click|preventDefault={goToNoScroll(route)}>
 			<div
 				class={"mb-6 flex max-w-max items-center gap-2 text-zinc-400 transition-all hover:translate-x-1 hover:text-zinc-200"}
 			>
@@ -94,7 +99,7 @@
 				: "translate-y-12 scale-95 bg-zinc-900 opacity-0  delay-[450ms]"
 		)}
 	>
-		<a href={route}>
+		<a href={route} on:click|preventDefault={goToNoScroll(route)}>
 			<img
 				src={image}
 				alt="{name} thumbnail"

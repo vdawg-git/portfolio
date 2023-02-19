@@ -9,6 +9,7 @@ specifiers:
   '@tsconfig/svelte': ^3.0.0
   '@types/diff': ^5.0.2
   '@types/prettier': ^2.7.2
+  '@types/three': ^0.149.0
   '@typescript-eslint/eslint-plugin': ^5.48.0
   '@typescript-eslint/parser': ^5.48.0
   autoprefixer: ^10.4.13
@@ -27,8 +28,10 @@ specifiers:
   prettier-plugin-svelte: ^2.9.0
   prettier-plugin-tailwindcss: ^0.2.1
   svelte: ^3.55.0
+  svelte-intersection-observer-action: ^0.0.2
   svelte-preprocess: ^5.0.0
   tailwindcss: ^3.2.4
+  three: ^0.149.0
   ts-essentials: ^9.3.0
   ts-pattern: ^4.0.6
   tslib: ^2.4.1
@@ -46,6 +49,8 @@ dependencies:
   fp-ts-std: 0.15.1_fp-ts@2.13.1
   hexoid: 1.0.0
   highlight.js: 11.7.0
+  svelte-intersection-observer-action: 0.0.2
+  three: 0.149.0
   ts-pattern: 4.1.4
   vitest: 0.26.3
 
@@ -57,6 +62,7 @@ devDependencies:
   '@tsconfig/svelte': 3.0.0
   '@types/diff': 5.0.2
   '@types/prettier': 2.7.2
+  '@types/three': 0.149.0
   '@typescript-eslint/eslint-plugin': 5.52.0_6cfvjsbua5ptj65675bqcn6oza
   '@typescript-eslint/parser': 5.52.0_7kw3g6rralp5ps6mg3uyzz6azm
   autoprefixer: 10.4.13_postcss@8.4.21
@@ -499,6 +505,16 @@ packages:
 
   /@types/semver/7.3.13:
     resolution: {integrity: sha512-21cFJr9z3g5dW8B0CVI9g2O9beqaThGQ6ZFBqHfwhzLDKUxaqTIy3vnfah/UPkfOiF2pLq+tGz+W8RyCskuslw==}
+    dev: true
+
+  /@types/three/0.149.0:
+    resolution: {integrity: sha512-fgNBm9LWc65ER/W0cvoXdC0iMy7Ke9e2CONmEr6Jt8sDSY3sw4DgOubZfmdZ747dkPhbQrgRQAWwDEr2S/7IEg==}
+    dependencies:
+      '@types/webxr': 0.5.1
+    dev: true
+
+  /@types/webxr/0.5.1:
+    resolution: {integrity: sha512-xlFXPfgJR5vIuDefhaHuUM9uUgvPaXB6GKdXy2gdEh8gBWQZ2ul24AJz3foUd8NNKlSTQuWYJpCb1/pL81m1KQ==}
     dev: true
 
   /@typescript-eslint/eslint-plugin/5.52.0_6cfvjsbua5ptj65675bqcn6oza:
@@ -2346,6 +2362,10 @@ packages:
       svelte: 3.55.1
     dev: true
 
+  /svelte-intersection-observer-action/0.0.2:
+    resolution: {integrity: sha512-cRh00VYAhYRsHJo2GzOfF9q1uyerpFc7KAzUv+01Greg8wSCtXFZ2Iz4In6CZssq6tmumfQUBD3t0p7puLWyvQ==}
+    dev: false
+
   /svelte-preprocess/5.0.1_k4bhxdknaltjvjwprbm23edr5q:
     resolution: {integrity: sha512-0HXyhCoc9rsW4zGOgtInylC6qj259E1hpFnJMJWTf+aIfeqh4O/QHT31KT2hvPEqQfdjmqBR/kO2JDkkciBLrQ==}
     engines: {node: '>= 14.10.0'}
@@ -2437,6 +2457,10 @@ packages:
   /text-table/0.2.0:
     resolution: {integrity: sha512-N+8UisAXDGk8PFXP4HAzVR9nbfmVJ3zYLAWiTIoqC5v5isinhr+r5uaO8+7r3BMfuNIufIsA7RdpVgacC2cSpw==}
     dev: true
+
+  /three/0.149.0:
+    resolution: {integrity: sha512-tohpUxPDht0qExRLDTM8sjRLc5d9STURNrdnK3w9A+V4pxaTBfKWWT/IqtiLfg23Vfc3Z+ImNfvRw1/0CtxrkQ==}
+    dev: false
 
   /tiny-glob/0.2.9:
     resolution: {integrity: sha512-g/55ssRPUjShh+xkfx9UPDXqhckHEsHr4Vd9zX55oSdGZc/MD0m3sferOkwWtp98bv+kcVfEHtRJgBVJzelrzg==}

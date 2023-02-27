@@ -15,7 +15,7 @@ module.exports = {
 	ignorePatterns: ["node_modules/**", "**/dist/**", "*.cjs"],
 	overrides: [
 		{
-			files: ["*.svelte"],
+			files: ["*.{svelte,svx}"],
 			processor: "svelte3/svelte3"
 		}
 	],

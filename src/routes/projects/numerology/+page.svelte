@@ -1,3 +1,16 @@
+<script lang="ts" context="module">
+	import type { ProjectMetaData } from "$lib/types/Types"
+
+	export const metadata: ProjectMetaData = {
+		title: "Numerology Toolbelt",
+		image: "/numerology thumb.png",
+		description: `Small app to calculate numerological values.`,
+		sort: 2,
+		github: "https://numerology-toolbelt.surge.sh/",
+		website: "https://numerology-toolbelt.surge.sh/"
+	}
+</script>
+
 <script lang="ts">
 	import { intersect } from "svelte-intersection-observer-action"
 	import { onMount } from "svelte"
@@ -37,7 +50,7 @@
 		<div class="mb-6 h-40 w-40  shadow-xl shadow-zinc-900">
 			<img
 				alt="Numerology toolbox logo"
-				src="numerology-logo.svg"
+				src="/numerology-logo.svg"
 				class="w-full"
 			/>
 		</div>
@@ -83,7 +96,7 @@
 	}}
 >
 	<img
-		src="numerology-screen.png"
+		src="/numerology-screen.png"
 		alt="Numerology Toolbelt screenshot"
 		class={clsx(
 			"_cover  h-full w-full rounded-md",
@@ -108,18 +121,18 @@
 
 	<h3>Techstack</h3>
 	<div class="my-8 flex flex-wrap justify-center gap-8">
-		<Logo href="https://svelte.dev/" icon="svelte-icon.svg" name="Svelte" />
+		<Logo href="https://svelte.dev/" icon="/svelte-icon.svg" name="Svelte" />
 		<Logo
 			href="https://tailwindcss.com/"
-			icon="tailwindcss-icon.svg"
+			icon="/tailwindcss-icon.svg"
 			name="TailwindCSS"
 		/>
 		<Logo
 			href="https://www.typescriptlang.org/"
-			icon="typescript-icon.svg"
+			icon="/typescript-icon.svg"
 			name="Typescript"
 		/>
-		<Logo href="https://vitest.dev/" icon="vitest.svg" name="Vitest" />
+		<Logo href="https://vitest.dev/" icon="/vitest.svg" name="Vitest" />
 	</div>
 	<p>I used Svelte, TypeScript, TailwindCSS and Vitest to build the app.</p>
 </div>

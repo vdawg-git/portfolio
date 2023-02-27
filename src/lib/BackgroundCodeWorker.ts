@@ -18,10 +18,10 @@ const noContentTagsRegex = /(<(\w*)[^>]*)><\/\2>/gm
 highlighter.registerLanguage("html", htmlHighlightLanguage)
 
 let lastResult: string | undefined
-let diffEndTimeout: NodeJS.Timeout
+let sendDiffTimeout: NodeJS.Timeout
 
 onmessage = (event: MessageEvent<BackgroundCodeArgument>) => {
-	clearTimeout(diffEndTimeout)
+	clearTimeout(sendDiffTimeout)
 
 	const result = pipe(
 		event.data.source,
@@ -35,18 +35,17 @@ onmessage = (event: MessageEvent<BackgroundCodeArgument>) => {
 		? diffLines(lastResult, result).map(diffPartToHTML).join("")
 		: undefined
 
-	// Prevent the string from being truthy with one space
-
-	diffEndTimeout = setTimeout(() => {
+	sendDiffTimeout = setTimeout(() => {
+		// Prevent the string from being truthy with only one space
 		lastResult = result.trim() ? result : undefined
 
 		diffed ? postDiffAndResult(diffed, result) : postMessage(result)
-	}, 40)
+	}, 50)
 }
 
 function postDiffAndResult(diffed: string, result: string) {
 	postMessage(diffed)
-	setTimeout(() => postMessage(result), 1250)
+	sendDiffTimeout = setTimeout(() => postMessage(result), 850)
 }
 
 function highlightHTML(html: string): string {

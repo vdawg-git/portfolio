@@ -1,3 +1,15 @@
+<script lang="ts" context="module">
+	import type { ProjectMetaData } from "$lib/types/Types"
+
+	export const metadata: ProjectMetaData = {
+		title: "Sing",
+		image: "/Logo img.png",
+		description: `A modern simple music library with great design.`,
+		sort: 0,
+		github: "https://github.com/Visual-Dawg/sing/"
+	}
+</script>
+
 <script lang="ts">
 	import { onMount } from "svelte"
 	import { clsx } from "clsx"
@@ -75,7 +87,7 @@
 			"_cover  h-full w-full object-contain shadow-2xl",
 			shouldAnimateCover && "_cover-visible "
 		)}
-		src="sing-screen.jpg"
+		src="/sing-screen.jpg"
 	/>
 	<div
 		class={clsx(
@@ -100,35 +112,35 @@
 
 	<h3>Techstack</h3>
 	<div class="my-8 flex flex-wrap justify-center gap-8">
-		<Logo name="Svelte" href="https://svelte.dev/" icon="svelte-icon.svg" />
+		<Logo name="Svelte" href="https://svelte.dev/" icon="/svelte-icon.svg" />
 		<Logo
 			name="TailwindCSS"
 			href="https://tailwindcss.com/"
-			icon="tailwindcss-icon.svg"
+			icon="/tailwindcss-icon.svg"
 		/>
 		<Logo
 			name="Typescript"
 			href="https://www.typescriptlang.org/"
-			icon="typescript-icon.svg"
+			icon="/typescript-icon.svg"
 		/>
 		<Logo
 			name="Prisma"
 			href="https://prisma.io/"
-			icon="prisma.svg"
+			icon="/prisma.svg"
 			classes="bg-zinc-200 rounded-xl p-2"
 		/>
 		<Logo
 			name="Electron"
 			href="https://www.electronjs.org/"
-			icon="electron.svg"
+			icon="/electron.svg"
 			classes="bg-zinc-800 rounded-xl p-2"
 		/>
 		<Logo
 			name="Playwright"
 			href="https://playwright.dev/"
-			icon="playwright.svg"
+			icon="/playwright.svg"
 		/>
-		<Logo href="https://vitest.dev/" icon="vitest.svg" name="Vitest" />
+		<Logo href="https://vitest.dev/" icon="/vitest.svg" name="Vitest" />
 	</div>
 	<p>
 		To develop my music library application, I used Svelte, TypeScript,
@@ -148,11 +160,11 @@
 	</p>
 
 	<!-- svelte-ignore a11y-media-has-caption -->
-	<video autoplay muted loop src="sing ui atomic video.mp4" />
+	<video autoplay muted loop src="/sing ui atomic video.mp4" />
 	<p class="subtext">Atomic design in action</p>
 
 	<img
-		src="atomic design.png"
+		src="/atomic design.png"
 		alt="The UI library displaying the use of atomic design"
 	/>
 	<p class="subtext ">UI library</p>

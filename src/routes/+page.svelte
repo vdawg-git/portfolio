@@ -5,6 +5,12 @@
 	import GithubIcon from "virtual:icons/uil/github"
 	import GlobeIcon from "virtual:icons/uil/globe"
 	import ArrowCircleDownIcon from "virtual:icons/uil/arrow-circle-down"
+	import type { PageData } from "./$types"
+	import { metadata } from "./projects/numerology/+page.svelte"
+
+	export let data: PageData
+
+	$: projects = data.projects
 
 	let cardsElement: HTMLElement | undefined
 </script>
@@ -52,28 +58,18 @@
 	class="flex flex-col items-center justify-center gap-36 pt-6"
 	bind:this={cardsElement}
 >
-	<Card
-		name="Sing"
-		text="A modern simple music library with great design."
-		image="/Logo img.png"
-		route="/sing"
-		externals={[
-			{ Icon: GithubIcon, to: "https://github.com/Visual-Dawg/sing/" }
-		]}
-	/>
-	<Card
-		name="Numerology Toolbox"
-		text="Small app to calculate numerological values."
-		image="/numerology thumb.png"
-		route="/numerology"
-		externals={[
-			{ Icon: GlobeIcon, to: "https://numerology-toolbelt.surge.sh/" },
-			{
-				Icon: GithubIcon,
-				to: "https://github.com/Visual-Dawg/numerology_tools"
-			}
-		]}
-	/>
+	{#each projects as { metadata, path }}
+		<Card
+			name={metadata.title}
+			text={metadata.description}
+			image={metadata.image}
+			route={path}
+			externals={[
+				...(metadata.github ? [{ Icon: GithubIcon, to: metadata.github }] : []),
+				...(metadata.website ? [{ Icon: GlobeIcon, to: metadata.website }] : [])
+			]}
+		/>
+	{/each}
 </div>
 
 <style lang="postcss">

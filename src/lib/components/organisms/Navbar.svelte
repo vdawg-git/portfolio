@@ -11,7 +11,7 @@
 </script>
 
 <nav
-	class="z-40 mt-8 flex items-center justify-center text-sm font-bold tracking-wide"
+	class="z-40 pt-8 flex items-center justify-center text-sm font-bold tracking-wide"
 >
 	<div
 		class="relative z-40 flex w-[748px] items-center justify-between  px-6 py-2"
@@ -20,7 +20,7 @@
 			<a href="/"
 				><div class="flex items-center gap-3">
 					<img
-						src="Logo.svg"
+						src="/Logo.svg"
 						class="-ml-2 h-12 w-12"
 						alt="Christofer Koeth Logo"
 					/> Christofer

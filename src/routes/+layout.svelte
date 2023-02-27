@@ -15,17 +15,16 @@
 	/>
 </div>
 
-<main class="w-full bg-transparent">
+<main class="w-full bg-transparent min-h-screen flex flex-col">
 	<Navbar />
-	<div class="mx-auto mt-6 flex flex-col items-center bg-transparent">
+	<div class="mx-auto mt-6 flex flex-col items-center bg-transparent grow">
 		<slot>Nothing here</slot>
 	</div>
-
 	<Footer />
 </main>
 
 <!-- background Gradient Bottom -->
-<div class="fixed inset-x-0 bottom-0 -z-40 max-h-0">
+<div class="sticky inset-x-0 bottom-0 -z-40 max-h-0 ">
 	<div
 		class="absolute inset-x-0 bottom-0 -z-40 h-96 bg-gradient-to-b from-transparent to-zinc-900 [contain:strict]"
 	/>

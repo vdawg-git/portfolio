@@ -2,10 +2,10 @@
 	import { onMount } from "svelte"
 	import * as THREE from "three"
 	import { OrbitControls } from "three/examples/jsm/controls/OrbitControls"
-	import fragmentShader from "./noiseFragment.glsl?raw"
-	import vertexShader from "./noiseVertex.glsl?raw"
+	import fragmentShader from "./TrippyFragment.glsl?raw"
+	import vertexShader from "./TrippyVertex.glsl?raw"
 
-	import { cancelAnimeAnimations } from "$lib/helper/Helper"
+	// import { cancelAnimeAnimations } from "$lib/helper/Helper"
 
 	export let width = 800
 	export let pixelRatio: number
@@ -18,19 +18,19 @@
 		fragmentShader,
 		extensions: { derivatives: true },
 		uniforms: {
-			time: { value: 0 },
-			resolution: { value: new THREE.Vector4() }
+			u_time: { value: 0 },
+			u_resolution: { value: new THREE.Vector4() }
 		},
 		side: THREE.DoubleSide
 		// wireframe: true
 	})
 
 	// Cube
-	const mesh = new THREE.Mesh(new THREE.SphereGeometry(1, 32, 32), material)
+	const mesh = new THREE.Mesh(new THREE.SphereGeometry(1.5, 56, 56), material)
 
 	mesh.rotateX(45)
-	mesh.rotateZ(-45)
-	mesh.rotateY(45)
+	mesh.rotateZ(85)
+	// mesh.rotateY(45)
 
 	scene.add(mesh)
 
@@ -40,7 +40,7 @@
 		width / ((width / 16) * 9),
 		0.01
 	)
-	camera.position.z = 0.9
+	camera.position.z = 4
 	scene.add(camera)
 
 	let renderer: THREE.WebGLRenderer
@@ -48,7 +48,7 @@
 	onMount(() => {
 		// Controls
 		const controls = new OrbitControls(camera, canvas)
-		// controls.enableZoom = false
+		controls.enableZoom = true
 		// controls.enablePan = false
 		// controls.rotateSpeed = 2.4
 		// controls.enableDamping = true
@@ -77,7 +77,7 @@
 			function closure() {
 				controls.update()
 
-				material.uniforms.time.value = clock.getElapsedTime() * 0.3
+				material.uniforms.u_time.value = clock.getElapsedTime()
 
 				renderer.render(scene, camera)
 

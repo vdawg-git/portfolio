@@ -13,7 +13,7 @@
 	import { onMount } from "svelte"
 	import { match } from "ts-pattern"
 	import GeometryP5 from "./artworks/p5-geometry.svelte"
-	import Noises from "./artworks/noise.svelte"
+	import Trippy from "./artworks/Trippy.svelte"
 	import RedCube from "./artworks/red_cube.svelte"
 
 	let artworkWidth = 800
@@ -41,11 +41,11 @@
 	}}
 />
 
-<GeometryP5 baseWidth={artworkWidth} {pixelRatio} />
+<!-- <GeometryP5 baseWidth={artworkWidth} {pixelRatio} />
 # p5.js with Three.js shaders
 
 <RedCube width={artworkWidth} {pixelRatio} />
-# First expiremt with Three.js. A red cube.
+# First expiremt with Three.js. A red cube. -->
 
-<Noises width={artworkWidth} {pixelRatio} />
+<Trippy width={artworkWidth} {pixelRatio} />
 # I started to learn shaders. They are awesome
